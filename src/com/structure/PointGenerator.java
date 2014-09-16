@@ -18,8 +18,6 @@ public class PointGenerator{
 	int pointsNum;
 	ArrayList<Point> points;
 	
-
-	
 	public PointGenerator(){
 		this.pointsNum = POINTNUM;
 		this.points = new ArrayList<Point>();
