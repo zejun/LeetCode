@@ -14,5 +14,13 @@ public class Point {
 		this.x=a;
 		this.y=b;
 	}
+	
+	public int getx(){
+		return this.x;
+	}
+	
+	public int gety(){
+		return this.y;
+	}
 
 }
