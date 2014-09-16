@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.structure.Point;
+import com.generator.*;
 
-public class PointGenerator {
+public class PointGenerator extends Generator{
 	
 	final int POINTNUM = 100;
 	
