@@ -7,7 +7,8 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("test");
 		
-		PointGenerator pg = new PointGenerator();
+		PointGenerator pg = new PointGenerator(100);
+		
 		pg.printPoint();
 		
 	}

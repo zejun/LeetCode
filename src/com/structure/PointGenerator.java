@@ -60,18 +60,26 @@ public class PointGenerator{
 		String key = x+" "+y;
 		if(table.get(key)==null){
 			table.put(key, new Boolean(true));
+			points.add(newPoint);
 		}else{
 			int x1 = rand.nextInt(100);
 			int y1 = rand.nextInt(100);
 			addPoints(x1,y1);
 		}
 		
-		points.add(newPoint);
+		
 	}
 	
 	public void addPoints(int x,int y){
 		Point newPoint = new Point(x,y);
-		points.add(newPoint);
+		
+		String key = x+" "+y;
+		if(table.get(key)==null){
+			table.put(key, new Boolean(true));
+			points.add(newPoint);
+		}else{
+//			System.out.println("Not able to add point");
+		}
 	}
 	
 	public ArrayList<Point> getPoints(){
