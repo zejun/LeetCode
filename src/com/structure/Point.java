@@ -6,8 +6,8 @@ public class Point {
 	int y;
 	
 	Point(){
-		x=0;
-		y=0;
+		this.x=0;
+		this.y=0;
 	}
 	
 	Point(int a, int b){

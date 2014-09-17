@@ -11,8 +11,6 @@ public class PointGenerator{
 	
 	final int POINTNUM = 100;
 	
-
-	
 	Hashtable<String, Boolean> table = new Hashtable();
 	
 	int pointsNum;
