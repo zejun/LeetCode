@@ -9,6 +9,7 @@ public class MaxPointOnALine {
 
 	public static int maxPoint(ArrayList<Point> points){
 		
+		
 		int maxPoint = 2;
 		int lineNum = 0;
 		Hashtable<String, Integer> table = new Hashtable();
@@ -26,15 +27,35 @@ public class MaxPointOnALine {
 				for(int j=i+1;j<points.size();j++){
 					Point p2 = points.get(j);
 					//for each line we have k 
-					long k = (p1.gety()-p2.gety())/(p1.getx()-p2.getx());
-					long a = p1.gety()-k*p1.gety();
+					float k = ((float)p1.gety()-(float)p2.gety())/((float)p1.getx()-(float)p2.getx());
+					float a = (float)p1.gety()-(float)k*p1.gety();
+					
+					
 					
 					if(table.get(k+" "+a)!=null){
-						System.out.println("Line already exist");
+						//System.out.println("Line already exist");
 						
 					}else{
 						table.put(k+" "+a, 2);
 						lineNum++;
+						Integer num = 2;
+						
+						System.out.println("Initial line "+p1.getx()+" "+p1.gety()+"  "+p2.getx()+" "+p2.gety());
+//						
+						for(int x=j+1;x<points.size();x++){
+							Point px = points.get(x);
+							
+							if((a+k*px.getx())==px.gety()){
+								num++;
+								System.out.println("Find same line "+px.getx()+" "+px.gety());
+								
+								if(num>maxPoint){
+									maxPoint = num;
+								}
+							}
+							
+						}
+						
 						System.out.println("Line don't exist, add line "+lineNum);
 					}
 					
@@ -42,7 +63,7 @@ public class MaxPointOnALine {
 				
 			}
 			
-			return 2;
+			return maxPoint;
 		}
 		
 		
