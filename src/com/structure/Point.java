@@ -2,8 +2,8 @@ package com.structure;
 
 public class Point {
 	
-	int x;
-	int y;
+	public int x;
+	public int y;
 	
 	Point(){
 		this.x=0;
