@@ -5,12 +5,12 @@ public class Point {
 	public int x;
 	public int y;
 	
-	Point(){
+	public Point(){
 		this.x=0;
 		this.y=0;
 	}
 	
-	Point(int a, int b){
+	public Point(int a, int b){
 		this.x=a;
 		this.y=b;
 	}

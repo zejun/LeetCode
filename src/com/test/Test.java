@@ -2,6 +2,7 @@ package com.test;
 
 import com.javalearn.Apple;
 import com.solution.MaxPointOnALine;
+import com.structure.Point;
 import com.structure.PointGenerator;
 
 public class Test {
@@ -9,19 +10,37 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("test");
 		
-		PointGenerator pg = new PointGenerator(3);
-		pg.getPoints();	
+		Point pointa = new Point(3,1);
+		Point pointb = new Point(12,3);
+		Point pointc = new Point(3,1);
+		Point pointd = new Point(-6,-1);
+		Point[] input = {pointa,pointb,pointc,pointd};
 		
-		pg.addPoints(4,1);
-		pg.addPoints(4,2);
-		pg.addPoints(4,3);
+		int result = MaxPointOnALine.maxPoint(input);
+		
+		System.out.println("The result is "+result);
+		
+		int test1 = 3;
+		
+		int v1 = test1/2;
+		int v2 = test1-v1;
+		
+		System.out.println("v1 "+v1+" v2 "+v2);
+		
+//		PointGenerator pg = new PointGenerator(3);
+//		pg.getPoints();	
+//		
+//		pg.addPoints(1,1);
+//		pg.addPoints(1,2);
+//		pg.addPoints(2,3);
 //		pg.addPoints(50,50);
 //		pg.addPoints(40,40);
 		//pg.printPoint();
 		
-		int result = MaxPointOnALine.maxPoint(pg.getPoints());
+//		int result = MaxPointOnALine.maxPoint(pg.getPoints());
 		
-		System.out.println("Maximum # of points in same line "+result);
+		 
+//		System.out.println("Maximum # of points in same line "+result);
 		
 		
 		
