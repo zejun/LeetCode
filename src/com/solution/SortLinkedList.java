@@ -41,6 +41,7 @@ public class SortLinkedList {
 	public static ListNode sortList(ListNode h1, int size){
         
         if(size==1){
+        	h1.next = null;
             return h1;
         }else{
             ListNode l1 = h1;

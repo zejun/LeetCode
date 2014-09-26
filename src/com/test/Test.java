@@ -35,9 +35,8 @@ public class Test {
 		
 		SortLinkedList.sortList(a);
 		
-		for(int i=0;i<=4;i++){
+		while(a.next!=null){
 			System.out.println(a.val);
-			a = a.next;
 		}
 		
 		//print linked list
