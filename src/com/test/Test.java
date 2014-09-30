@@ -27,16 +27,19 @@ public class Test {
 //		int v1 = test1/2;
 //		int v2 = test1-v1;
 		
-		ListNode a = new ListNode(3);
-		ListNode b = new ListNode(2);
+		ListNode a = new ListNode(2);
+		ListNode b = new ListNode(1);
 		ListNode c = new ListNode(4);
+		ListNode d = new ListNode(8);
 		a.next=b;
 		b.next=c;
+		c.next=d;
 		
-		SortLinkedList.sortList(a);
+		ListNode e = SortLinkedList.sortList(a);
 		
-		while(a.next!=null){
-			System.out.println(a.val);
+		while(e!=null){
+			System.out.println(e.val);
+			e=e.next;
 		}
 		
 		//print linked list
