@@ -1,6 +1,7 @@
 package com.test;
 
 import com.javalearn.Apple;
+import com.solution.InsertionSortLinkedList;
 import com.solution.MaxPointOnALine;
 import com.solution.SortLinkedList;
 import com.structure.ListNode;
@@ -35,7 +36,9 @@ public class Test {
 		b.next=c;
 		c.next=d;
 		
-		ListNode e = SortLinkedList.sortList(a);
+		//ListNode e = SortLinkedList.sortList(a);
+		ListNode e = InsertionSortLinkedList.insertionSort(a);
+		
 		
 		while(e!=null){
 			System.out.println(e.val);
