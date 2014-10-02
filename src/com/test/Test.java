@@ -2,6 +2,7 @@ package com.test;
 
 import com.javalearn.Apple;
 import com.solution.InsertionSortLinkedList;
+import com.solution.LRUCache;
 import com.solution.MaxPointOnALine;
 import com.solution.SortLinkedList;
 import com.structure.ListNode;
@@ -11,7 +12,39 @@ import com.structure.PointGenerator;
 public class Test {
 	
 	public static void main(String args[]){
-		System.out.println("test");
+		System.out.println("Test method");
+		
+		
+		/**
+		 * test for LRU cache
+		 */
+		LRUCache testCache = new LRUCache(6);
+		
+		testCache.set(1, 10);
+		testCache.set(2, 20);
+		testCache.set(3, 30);
+		testCache.set(4, 40);
+		testCache.set(5, 50);
+		testCache.set(6, 60);
+		testCache.set(5, 50);
+		testCache.set(2, 20);
+		testCache.set(7, 70);
+		testCache.set(8, 80);
+		
+		System.out.println("Get key 1 value"+testCache.get(1));
+		System.out.println("Get key 8 value"+testCache.get(8));
+		System.out.println("Get key 7 value"+testCache.get(7));
+		
+		int index = 1;
+		while(!testCache.cache.isEmpty()){
+			LRUCache.DataPair tem = testCache.cache.pop();
+			System.out.println("Pop "+index+" key "+tem.key+" value "+tem.val);
+			index++;
+		}
+		
+//		for(int i=1;i<=6;i++){
+//			System.out.println("value "+i+" is "+testCache.get(i));
+//		}
 		
 		
 		/**
