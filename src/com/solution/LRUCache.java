@@ -112,6 +112,8 @@ public class LRUCache {
     public class DataPair{
     	public int key;
     	public int val;
+    	public DataPair next;
+    	public DataPair prev;
     	
     	public DataPair(int key,int val){
     		this.key = key;

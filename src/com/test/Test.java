@@ -3,6 +3,8 @@ package com.test;
 import com.javalearn.Apple;
 import com.solution.InsertionSortLinkedList;
 import com.solution.LRUCache;
+import com.solution.LRUCacheLinkedList;
+import com.solution.LRUCacheLinkedList.DataPair;
 import com.solution.MaxPointOnALine;
 import com.solution.SortLinkedList;
 import com.structure.ListNode;
@@ -18,7 +20,7 @@ public class Test {
 		/**
 		 * test for LRU cache
 		 */
-		LRUCache testCache = new LRUCache(6);
+		LRUCacheLinkedList testCache = new LRUCacheLinkedList(7);
 		
 		testCache.set(1, 10);
 		testCache.set(2, 20);
@@ -30,17 +32,27 @@ public class Test {
 		testCache.set(2, 20);
 		testCache.set(7, 70);
 		testCache.set(8, 80);
+		testCache.set(9, 90);
 		
-		System.out.println("Get key 1 value"+testCache.get(1));
-		System.out.println("Get key 8 value"+testCache.get(8));
-		System.out.println("Get key 7 value"+testCache.get(7));
+		System.out.println("Get key 1 value "+testCache.get(1));
+		System.out.println("Get key 8 value "+testCache.get(8));
+		System.out.println("Get key 7 value "+testCache.get(7));
+		System.out.println("Get key 10 value "+testCache.get(10));
 		
-		int index = 1;
-		while(!testCache.cache.isEmpty()){
-			LRUCache.DataPair tem = testCache.cache.pop();
-			System.out.println("Pop "+index+" key "+tem.key+" value "+tem.val);
+		int index = 0;
+		DataPair tem = testCache.head;
+		while(tem!=null){
+			System.out.println("Index "+index+" value "+tem.val);
+			tem = tem.next;
 			index++;
 		}
+		
+//		int index = 1;
+//		while(!testCache.cache.isEmpty()){
+//			LRUCache.DataPair tem = testCache.cache.pop();
+//			System.out.println("Pop "+index+" key "+tem.key+" value "+tem.val);
+//			index++;
+//		}
 		
 //		for(int i=1;i<=6;i++){
 //			System.out.println("value "+i+" is "+testCache.get(i));
