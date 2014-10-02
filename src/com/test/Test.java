@@ -35,6 +35,9 @@ public class Test {
 		
 		SortLinkedList.sortList(a);
 		
+		
+		
+		
 		while(a.next!=null){
 			System.out.println(a.val);
 		}
