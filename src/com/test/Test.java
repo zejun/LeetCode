@@ -23,11 +23,13 @@ public class Test {
 		TreeNode treeNode3 = new TreeNode(3);
 		TreeNode treeNode4 = new TreeNode(4);
 		TreeNode treeNode5 = new TreeNode(5);
+		TreeNode treeNode6 = new TreeNode(6);
 		
 		treeNode1.left = treeNode2;
 		treeNode1.right = treeNode3;
 		treeNode3.right = treeNode4;
 		treeNode4.left = treeNode5;
+		treeNode4.right = treeNode6;
 		
 		List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversal(treeNode1);
 		
