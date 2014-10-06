@@ -10,12 +10,16 @@ public class BinaryTreePostOrderTraversal {
 
 	public static List<Integer> postOrderTraversal(TreeNode root){
 		
-		List<Integer> result = new ArrayList<Integer>();
-		Stack<Integer> tem = new Stack<Integer>();
+		ArrayList<Integer> result = new ArrayList<Integer>();
 		
-		for(int i=0;i<5;i++){
-			result.add(i);
+		if(root == null){
+			return result;
 		}
+		
+		result.addAll(postOrderTraversal(root.left));
+		result.addAll(postOrderTraversal(root.right));
+		result.add(root.val);
+		
 		
 		return result;
 		

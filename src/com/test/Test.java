@@ -24,9 +24,10 @@ public class Test {
 		TreeNode treeNode4 = new TreeNode(4);
 		TreeNode treeNode5 = new TreeNode(5);
 		
-		
-		
-		
+		treeNode1.left = treeNode2;
+		treeNode1.right = treeNode3;
+		treeNode3.right = treeNode4;
+		treeNode4.left = treeNode5;
 		
 		List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversal(treeNode1);
 		
