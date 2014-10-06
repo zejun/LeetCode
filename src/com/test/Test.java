@@ -1,6 +1,9 @@
 package com.test;
 
 
+import java.util.Iterator;
+import java.util.List;
+
 import com.solution.*;
 
 import com.structure.*;
@@ -14,8 +17,14 @@ public class Test {
 		/**
 		 * test for binary tree post order traversal 
 		 */
+		TreeNode testInput = new TreeNode(5);
+		List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversal(testInput);
 		
-		
+		for(Integer result:testInteger){
+			
+			System.out.println("Iter info is "+result);
+			
+		}
 		
 		
 		/**
@@ -52,17 +61,17 @@ public class Test {
 		
 		
 		
-		ListNode a = new ListNode(3);
-		ListNode b = new ListNode(2);
-		ListNode c = new ListNode(4);
-		a.next=b;
-		b.next=c;
-		
-		SortLinkedList.sortList(a);
-		
-		while(a.next!=null){
-			System.out.println(a.val);
-		}
+//		ListNode a = new ListNode(3);
+//		ListNode b = new ListNode(2);
+//		ListNode c = new ListNode(4);
+//		a.next=b;
+//		b.next=c;
+//		
+//		SortLinkedList.sortList(a);
+//		
+//		while(a.next!=null){
+//			System.out.println(a.val);
+//		}
 
 //		int index = 1;
 //		while(!testCache.cache.isEmpty()){
