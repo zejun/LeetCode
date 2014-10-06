@@ -39,16 +39,12 @@ public class BinaryTreePostOrderTraversal {
 		
 		while(!node.isEmpty()){
 			TreeNode curr = node.peek();
-			preorderResult.push(curr.val);
 			
-			if(curr.right!=null)
-				node.push(root.right);
-			
-			if(curr.left!=null)
-				node.push(root.left);
 			
 			
 		}
+		
+		return result;
 		
 		
 	}
