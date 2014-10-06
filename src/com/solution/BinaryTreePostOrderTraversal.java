@@ -25,4 +25,24 @@ public class BinaryTreePostOrderTraversal {
 		
 	}
 	
+	public static List<Integer> postOrderTraversalIteratively(TreeNode root){
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		
+		if(root == null){
+			return result;
+		}
+		
+		Stack<TreeNode> node = new Stack<TreeNode>();
+		
+		
+		node.push(root);
+		
+		while(!node.isEmpty()){
+			
+			
+		}
+		
+		
+	}
+	
 }
