@@ -1,15 +1,9 @@
 package com.test;
 
-import com.javalearn.Apple;
-import com.solution.InsertionSortLinkedList;
-import com.solution.LRUCache;
-import com.solution.LRUCacheLinkedList;
-import com.solution.LRUCacheLinkedList.DataPair;
-import com.solution.MaxPointOnALine;
-import com.solution.SortLinkedList;
-import com.structure.ListNode;
-import com.structure.Point;
-import com.structure.PointGenerator;
+
+import com.solution.*;
+
+import com.structure.*;
 
 public class Test {
 	
@@ -20,6 +14,9 @@ public class Test {
 		/**
 		 * test for binary tree post order traversal 
 		 */
+		
+		
+		
 		
 		/**
 		 * test for LRU cache
