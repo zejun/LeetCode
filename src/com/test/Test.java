@@ -24,14 +24,19 @@ public class Test {
 		TreeNode treeNode4 = new TreeNode(4);
 		TreeNode treeNode5 = new TreeNode(5);
 		TreeNode treeNode6 = new TreeNode(6);
+		TreeNode treeNode7 = new TreeNode(7);
+		
 		
 		treeNode1.left = treeNode2;
 		treeNode1.right = treeNode3;
 		treeNode3.right = treeNode4;
+		treeNode3.left = treeNode7;
 		treeNode4.left = treeNode5;
 		treeNode4.right = treeNode6;
 		
-		List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversalIteratively(treeNode1);
+		//List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversalIteratively(treeNode1);
+		List<Integer> testInteger = BinaryTreePreOrderTraversal.binaryTreePreorder(treeNode1);
+		
 		
 		for(Integer result:testInteger){
 			
