@@ -47,6 +47,13 @@ public class BinaryTreePreOrderTraversal {
 	
 	private static void travsal(TreeNode root,ArrayList<Integer> result){
 		
+		if(root==null){
+			return;
+		}
+		
+		result.add(root.val);
+		travsal(root.left,result);
+		travsal(root.right,result);
 		
 		
 	}
