@@ -31,7 +31,7 @@ public class Test {
 		treeNode4.left = treeNode5;
 		treeNode4.right = treeNode6;
 		
-		List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversal(treeNode1);
+		List<Integer> testInteger = BinaryTreePostOrderTraversal.postOrderTraversalIteratively(treeNode1);
 		
 		for(Integer result:testInteger){
 			

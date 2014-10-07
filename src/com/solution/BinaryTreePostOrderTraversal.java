@@ -33,15 +33,35 @@ public class BinaryTreePostOrderTraversal {
 		}
 		
 		Stack<TreeNode> node = new Stack<TreeNode>();
-		Stack<Integer> preorderResult = new Stack<Integer>();
+		
+		
+		TreeNode prev = null;
 		
 		node.push(root);
 		
 		while(!node.isEmpty()){
 			TreeNode curr = node.peek();
 			
-			
-			
+			//travel up to down
+			if(prev==null||prev.left==curr||prev.right==curr){
+				if(curr.left!=null){
+					node.push(curr.left);
+				}else if(curr.right!=null){
+					node.push(curr.right);
+				}
+			}
+			//travel backward
+			else if(curr.left==prev){
+				if(curr.right!=null){
+					node.push(curr.right);
+				}
+			}
+			//other pop the tree node value 
+			else{
+				result.add(curr.val);
+				node.pop();
+			}
+			prev = curr;
 		}
 		
 		return result;
