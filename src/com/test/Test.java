@@ -21,18 +21,26 @@ public class Test {
 		ListNode b = new ListNode(2);
 		ListNode c = new ListNode(3);
 		ListNode d = new ListNode(4);
+		ListNode e = new ListNode(5);
+		ListNode f = new ListNode(6);
+		
 		a.next=b;
 		b.next=c;
 		c.next=d;
+		d.next=e;
+		e.next=f;
 		
 		//ListNode e = SortLinkedList.sortList(a);
-		ListNode e = ReorderList.listReverse(a);
+//		ListNode e = ReorderList.listReverse(a);
+//		
+//		
+//		while(e!=null){
+//			System.out.println(e.val);
+//			e=e.next;
+//		}
 		
-		
-		while(e!=null){
-			System.out.println(e.val);
-			e=e.next;
-		}
+		//test for get middle 
+		System.out.println("Get middle "+ReorderList.getMiddle(a).val);
 		
 		
 		
