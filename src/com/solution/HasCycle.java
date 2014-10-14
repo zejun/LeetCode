@@ -18,7 +18,7 @@ public class HasCycle {
 			}
 			head = head.next;
 		}
-		
+		//use while loop quick run and slow run to decide where the loop happened
 		return false;
 	}
 
