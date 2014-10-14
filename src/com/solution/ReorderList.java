@@ -8,28 +8,29 @@ public class ReorderList {
 	
 		ListNode middle = getMiddle(head);
 		ListNode reverse = listReverse(middle.next);
+		middle.next = null;
 		
-		//merge two list together
+		//merge the reverse with head
 		ListNode dummy = new ListNode(0);
-		dummy.next = head;
-		dummy = dummy.next;
-		
+		ListNode list1 = head;
+		ListNode list2 = reverse;
 		int index = 0;
-		while(reverse!=null){
+		while(list1!=null&&list2!=null){
 			if(index%2==0){
-				dummy.next = head;
-				head = head.next;
+				dummy.next = list1;
+				list1 = list1.next;
 			}else{
-				dummy.next = reverse;
-				reverse = reverse.next;
+				dummy.next = list2;
+				list2 = list2.next;
 			}
 			
+			dummy = dummy.next;
 			index++;
 		}
-		if(head!=null){
-			dummy.next = head;
+		if(list1!=null){
+			dummy.next = list1;
 		}else{
-			dummy.next = reverse;
+			dummy.next = list2;
 		}
 		
 	}
