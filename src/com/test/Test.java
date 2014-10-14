@@ -31,16 +31,16 @@ public class Test {
 		e.next=f;
 		
 		//ListNode e = SortLinkedList.sortList(a);
-//		ListNode e = ReorderList.listReverse(a);
-//		
-//		
-//		while(e!=null){
-//			System.out.println(e.val);
-//			e=e.next;
-//		}
+		ReorderList.reorderList(a);
+		
+		
+		while(a!=null){
+			System.out.println(a.val);
+			a=a.next;
+		}
 		
 		//test for get middle 
-		System.out.println("Get middle "+ReorderList.getMiddle(a).val);
+		//System.out.println("Get middle "+ReorderList.getMiddle(a).val);
 		
 		
 		
