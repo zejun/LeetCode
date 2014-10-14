@@ -29,15 +29,18 @@ public class Test {
 		c.next=d;
 		d.next=e;
 		e.next=f;
+		f.next=c;
 		
 		//ListNode e = SortLinkedList.sortList(a);
-		ReorderList.reorderList(a);
+		//ReorderList.reorderList(a);
 		
 		
-		while(a!=null){
-			System.out.println(a.val);
-			a=a.next;
-		}
+//		while(a!=null){
+//			System.out.println(a.val);
+//			a=a.next;
+//		}
+		
+		System.out.println(HasCycle.hasCycle(a));
 		
 		//test for get middle 
 		//System.out.println("Get middle "+ReorderList.getMiddle(a).val);
