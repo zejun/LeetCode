@@ -1,8 +1,10 @@
 package com.test;
 
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import com.solution.*;
 
@@ -13,23 +15,36 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
+		/**
+		 * Test for word break 
+		 */
+		//String s = "leetcodesss";
+		String s = "aaaaaaa";
+		String[] dictStr = {"aaaa","aa"};
+		
+		Set<String> dict = new HashSet();
+		dict.add(dictStr[0]);
+		dict.add(dictStr[1]);
+		
+		System.out.println(WordBreak.wordBreakSlu(s, dict));
+		
 		
 		/**
 		 * test for reorder the list
 		 */
-		ListNode a = new ListNode(1);
-		ListNode b = new ListNode(2);
-		ListNode c = new ListNode(3);
-		ListNode d = new ListNode(4);
-		ListNode e = new ListNode(5);
-		ListNode f = new ListNode(6);
-		
-		a.next=b;
-		b.next=c;
-		c.next=d;
-		d.next=e;
-		e.next=f;
-		f.next=c;
+//		ListNode a = new ListNode(1);
+//		ListNode b = new ListNode(2);
+//		ListNode c = new ListNode(3);
+//		ListNode d = new ListNode(4);
+//		ListNode e = new ListNode(5);
+//		ListNode f = new ListNode(6);
+//		
+//		a.next=b;
+//		b.next=c;
+//		c.next=d;
+//		d.next=e;
+//		e.next=f;
+//		f.next=c;
 		
 		//ListNode e = SortLinkedList.sortList(a);
 		//ReorderList.reorderList(a);
@@ -40,7 +55,7 @@ public class Test {
 //			a=a.next;
 //		}
 		
-		System.out.println(HasCycle.hasCycle(a));
+//		System.out.println(HasCycle.hasCycle(a));
 		
 		//test for get middle 
 		//System.out.println("Get middle "+ReorderList.getMiddle(a).val);
