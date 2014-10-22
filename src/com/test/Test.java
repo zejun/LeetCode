@@ -18,13 +18,16 @@ public class Test {
 		/**
 		 * Test for word break 
 		 */
-		//String s = "leetcodesss";
+		//String s = "leetcode";
+		//String[] dictStr = {"leet","code"};
 		String s = "aaaaaaa";
-		String[] dictStr = {"aaaa","aa"};
+		String[] dictStr = {"aaaa","aaa"};
 		
 		Set<String> dict = new HashSet();
 		dict.add(dictStr[0]);
 		dict.add(dictStr[1]);
+		
+		//System.out.println(s.substring(1,2));
 		
 		System.out.println(WordBreak.wordBreakSlu(s, dict));
 		
