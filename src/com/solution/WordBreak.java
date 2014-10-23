@@ -11,28 +11,34 @@ public class WordBreak {
 	 * @return
 	 */
 	public static boolean wordBreakSlu(String input,Set<String> dict){
-		if(input==null)
+		if(input==null||input.length()==0)
 			return false;
 		
 		int checkLength = input.length();
+		boolean[] canSegment = new boolean[input.length()+1];
 		
+		int maxLength = 0;
+		for(String word:dict){
+			if(word.length()>maxLength)
+				maxLength = word.length();
+		}
 		
+		canSegment[0] = true;
 		for(int i=0;i<checkLength;i++){
-			for(int j=i+1;j<=checkLength;j++){
-				String tem = input.substring(i, j);
-				System.out.println(tem);
-				if(dict.contains(tem)){
-					dict.remove(tem);
-					if(j<checkLength)
-						return wordBreakSlu(input.substring(j,checkLength),dict);
-					else
-						return true;
+			canSegment[i] = false;
+			for(int j=1;j<=maxLength&&j<=i;j++){
+				if(!canSegment[i-j]){
+					continue;
 				}
-				
+				String tem = input.substring(i-j, i);
+				if(dict.contains(tem)){
+					canSegment[i]=true;
+					break;
+				}
 			}
 		}
 		
-		return false;
+		return canSegment[input.length()];
 	}
 	
 	
