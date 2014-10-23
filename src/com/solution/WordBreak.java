@@ -20,11 +20,12 @@ public class WordBreak {
 		int maxLength = 0;
 		for(String word:dict){
 			if(word.length()>maxLength)
-				maxLength = word.length();
+				//maxLength = word.length();
+				maxLength = Math.max(maxLength, word.length());
 		}
-		
+		System.out.println(maxLength);
 		canSegment[0] = true;
-		for(int i=0;i<checkLength;i++){
+		for(int i=1;i<=checkLength;i++){
 			canSegment[i] = false;
 			for(int j=1;j<=maxLength&&j<=i;j++){
 				if(!canSegment[i-j]){
