@@ -10,36 +10,40 @@ public class WordBreak {
 	 * @param dict
 	 * @return
 	 */
-	public static boolean wordBreakSlu(String input,Set<String> dict){
-		if(input==null||input.length()==0)
-			return false;
+	public static boolean wordBreakSlu(String s,Set<String> dict){
 		
-		int checkLength = input.length();
-		boolean[] canSegment = new boolean[input.length()+1];
+		if(s==null||s.length()==0){
+			return false;
+		}
 		
 		int maxLength = 0;
-		for(String word:dict){
-			if(word.length()>maxLength)
-				//maxLength = word.length();
-				maxLength = Math.max(maxLength, word.length());
+		for(String tem:dict){
+			maxLength = Math.max(maxLength, tem.length());
 		}
-		System.out.println(maxLength);
+		
+		boolean[] canSegment = new boolean[s.length()+1];
+		
 		canSegment[0] = true;
-		for(int i=1;i<=checkLength;i++){
+		
+		for(int i=1;i<=s.length();i++){
 			canSegment[i] = false;
 			for(int j=1;j<=maxLength&&j<=i;j++){
+				System.out.println("Loop info i= "+i+" j= "+j);
 				if(!canSegment[i-j]){
+					System.out.println("can't Segment "+(i-j));
 					continue;
 				}
-				String tem = input.substring(i-j, i);
+				String tem = s.substring(i-j,i);
+				System.out.println("Got tem "+tem);
 				if(dict.contains(tem)){
+					System.out.println("Can segment "+i+" is true");
 					canSegment[i]=true;
 					break;
 				}
 			}
 		}
 		
-		return canSegment[input.length()];
+		return canSegment[s.length()];
 	}
 	
 	
