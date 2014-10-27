@@ -1,5 +1,6 @@
 package com.solution;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -50,11 +51,33 @@ public class WordBreak {
 	
 	
 	public List<String> wordBreakII(String s, Set<String> dict){
-		
+		//initial the hash map for the memo
+		Map<String,List<String>> memo = new HashMap<String,List<String>>();
+		//return the value calculated by the word break helper
+		return wordBreakIIhelper(s,dict,memo);
 	}
 	
 	private List<String> wordBreakIIhelper(String s,Set<String> dict,Map<String,List<String>> memo){
+		if(s.length()<=0){
+			return null;
+		}
 		
+		if(memo.containsKey(s))
+			return memo.get(s);
+		else{
+			int strLength = s.length();
+			for(int i=1;i<s.length();i++){
+				String tem = s.substring(0, i);
+				
+				if(dict.contains(tem)){
+					
+				}else{
+					
+				}
+			}
+		}
+		
+		return null;
 	}
 	
 }
