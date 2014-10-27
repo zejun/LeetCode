@@ -29,7 +29,7 @@ public class Test {
 		
 		//System.out.println(s.substring(1,2));
 		
-		System.out.println(WordBreak.wordBreakSlu(s, dict));
+		System.out.println(WordBreak.wordBreakII(s, dict));
 		
 		
 		/**

@@ -1,5 +1,6 @@
 package com.solution;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,14 +51,14 @@ public class WordBreak {
 	}
 	
 	
-	public List<String> wordBreakII(String s, Set<String> dict){
+	public static List<String> wordBreakII(String s, Set<String> dict){
 		//initial the hash map for the memo
 		Map<String,List<String>> memo = new HashMap<String,List<String>>();
 		//return the value calculated by the word break helper
 		return wordBreakIIhelper(s,dict,memo);
 	}
 	
-	private List<String> wordBreakIIhelper(String s,Set<String> dict,Map<String,List<String>> memo){
+	private static List<String> wordBreakIIhelper(String s,Set<String> dict,Map<String,List<String>> memo){
 		if(s.length()<=0){
 			return null;
 		}
@@ -66,18 +67,32 @@ public class WordBreak {
 			return memo.get(s);
 		else{
 			int strLength = s.length();
+			ArrayList<String> result = new ArrayList<String>();
+			
 			for(int i=1;i<s.length();i++){
-				String tem = s.substring(0, i);
+				String prefix = s.substring(0, i);
 				
-				if(dict.contains(tem)){
-					
-				}else{
-					
+				if(dict.contains(prefix)){
+					//finished for the current string
+					if(i==strLength){
+						result.add(prefix);
+						
+					}else{
+						String postFix = s.substring(i);
+						List<String> temResult = wordBreakIIhelper(postFix,dict,memo);
+						for(String item:temResult){
+							item=prefix+" "+item;
+							result.add(item);
+						}
+						
+					}
 				}
 			}
+			memo.put(s, result);
+			return result;
 		}
 		
-		return null;
+		
 	}
 	
 }
