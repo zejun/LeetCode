@@ -59,39 +59,43 @@ public class WordBreak {
 	}
 	
 	private static List<String> wordBreakIIhelper(String s,Set<String> dict,Map<String,List<String>> memo){
-		if(s.length()<=0){
-			return null;
+		System.out.println("loop string "+s);
+		if(memo.containsKey(s)){
+			
+			return memo.get(s);
 		}
 		
-		if(memo.containsKey(s))
-			return memo.get(s);
-		else{
-			int strLength = s.length();
-			ArrayList<String> result = new ArrayList<String>();
+		int strLength = s.length();
+		ArrayList<String> result = new ArrayList<String>();
+		if(strLength<=0){
+			return result;
+		}
 			
-			for(int i=1;i<s.length();i++){
-				String prefix = s.substring(0, i);
-				
-				if(dict.contains(prefix)){
-					//finished for the current string
-					if(i==strLength){
-						result.add(prefix);
-						
-					}else{
-						String postFix = s.substring(i);
-						List<String> temResult = wordBreakIIhelper(postFix,dict,memo);
-						for(String item:temResult){
-							item=prefix+" "+item;
-							result.add(item);
-						}
-						
+		
+		for(int i=1;i<=strLength;i++){
+			
+			String prefix = s.substring(0, i);
+			
+			System.out.println("String prefix "+prefix+" loop "+i);
+			
+			if(dict.contains(prefix)){
+				System.out.println("get prefix "+prefix);
+				//finished for the current string
+				if(i==strLength){
+					result.add(prefix);
+					
+				}else{
+					String postFix = s.substring(i);
+					List<String> temResult = wordBreakIIhelper(postFix,dict,memo);
+					for(String item:temResult){
+						item=prefix+" "+item;
+						result.add(item);
 					}
 				}
 			}
-			memo.put(s, result);
-			return result;
 		}
-		
+		memo.put(s, result);
+		return result;
 		
 	}
 	

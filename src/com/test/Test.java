@@ -19,13 +19,13 @@ public class Test {
 		 * Test for word break 
 		 */
 		String s = "leetcode";
-		String[] dictStr = {"leet","code"};
-//		String s = "aaaaaaa";
-//		String[] dictStr = {"aaaa","aaa"};
+		String[] dictStr = {"lee","tcode","leet","code"};
 		
-		Set<String> dict = new HashSet();
-		dict.add(dictStr[0]);
-		dict.add(dictStr[1]);
+		Set<String> dict = new HashSet<String>();
+		for(int i=0;i<dictStr.length;i++){
+			dict.add(dictStr[i]);
+		}
+		
 		
 		//System.out.println(s.substring(1,2));
 		
