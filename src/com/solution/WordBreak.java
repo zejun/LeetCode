@@ -1,5 +1,7 @@
 package com.solution;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class WordBreak {
@@ -47,5 +49,12 @@ public class WordBreak {
 	}
 	
 	
-
+	public List<String> wordBreakII(String s, Set<String> dict){
+		
+	}
+	
+	private List<String> wordBreakIIhelper(String s,Set<String> dict,Map<String,List<String>> memo){
+		
+	}
+	
 }
