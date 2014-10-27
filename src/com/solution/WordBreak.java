@@ -59,9 +59,8 @@ public class WordBreak {
 	}
 	
 	private static List<String> wordBreakIIhelper(String s,Set<String> dict,Map<String,List<String>> memo){
-		System.out.println("loop string "+s);
-		if(memo.containsKey(s)){
-			
+		
+		if(memo.containsKey(s)){	
 			return memo.get(s);
 		}
 		
@@ -76,14 +75,10 @@ public class WordBreak {
 			
 			String prefix = s.substring(0, i);
 			
-			System.out.println("String prefix "+prefix+" loop "+i);
-			
 			if(dict.contains(prefix)){
-				System.out.println("get prefix "+prefix);
 				//finished for the current string
 				if(i==strLength){
 					result.add(prefix);
-					
 				}else{
 					String postFix = s.substring(i);
 					List<String> temResult = wordBreakIIhelper(postFix,dict,memo);
