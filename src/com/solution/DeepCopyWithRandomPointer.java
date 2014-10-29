@@ -10,26 +10,28 @@ public class DeepCopyWithRandomPointer {
 		
 		if(head==null)
 			return null;
-		
+		//hashmap<origin node, random node>
 		HashMap<RandomListNode,RandomListNode> map = new HashMap<RandomListNode,RandomListNode>();
 		RandomListNode dummy = new RandomListNode(0);
 		RandomListNode pre = dummy,newNode;
 		
 		while(head!=null){
-			//handle the random pointer
-			if(map.containsKey(head)){
-				map.get(head).next=head;
-			}else{
-				map.put(head.random, head);
-			}
-			pre = head;
+			//regular deep copy
 			
-			head=head.next;
+			RandomListNode tem = new RandomListNode(head.label);
+			
+			//first node
+			if(dummy.next==null){
+				dummy.next = tem;
+				pre = tem;
+			}else{
+				pre.next = tem;
+			}
 			
 		}
 		
 		
-		return head.next;
+		return dummy.next;
 	}
 	
 }
