@@ -16,11 +16,13 @@ public class DeepCopyWithRandomPointer {
 		RandomListNode pre = dummy,newNode;
 		
 		while(head!=null){
+			//handle the random pointer
 			if(map.containsKey(head)){
-				
+				map.get(head).next=head;
 			}else{
-				
+				map.put(head.random, head);
 			}
+			pre = head;
 			
 			head=head.next;
 			
