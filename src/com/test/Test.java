@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.solution.*;
-
 import com.structure.*;
+import com.structure.test.LinkedListTester;
 
 public class Test {
 	
@@ -36,7 +36,9 @@ public class Test {
 		n4.random = n5;
 		n5.random = n1;
 		
-		DeepCopyWithRandomPointer.solution(n1);
+		LinkedListTester.iterator(n1);
+		RandomListNode test = DeepCopyWithRandomPointer.solution(n1);
+		LinkedListTester.iterator(test);
 		
 		
 		
