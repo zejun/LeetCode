@@ -56,10 +56,34 @@ public class DeepCopyWithRandomPointer {
 	//solution without hashmap
 	public static RandomListNode solutionII(RandomListNode head){
 		
+		if(head==null)
+			return null;
+		
+		RandomListNode dummy = new RandomListNode(0);
+		
+		while(true){
+			
+			RandomListNode current = new RandomListNode(head.label);
+			//check first element
+			if(dummy.next==null)
+				dummy.next = head;
+			
+			//check if current is end of linked list 
+			if(head.next==null){
+				head.next = current;
+				break;
+			}else{
+				RandomListNode tem = head.next;
+				head.next = current;
+				current.next = tem;
+				
+			}
+			
+			head = head.next.next;
+		}
 		
 		
-		
-		return null;
+		return dummy.next;
 	}
 	
 }
