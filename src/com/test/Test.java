@@ -45,6 +45,8 @@ public class Test {
 		LinkedListTester.iterator(n1);
 		RandomListNode test = DeepCopyWithRandomPointer.solutionII(n1);
 		LinkedListTester.iterator(test);
+		LinkedListTester.randomIterator(n1);
+		LinkedListTester.randomIterator(test);
 		
 		
 		/**

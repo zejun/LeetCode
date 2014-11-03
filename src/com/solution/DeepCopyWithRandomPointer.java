@@ -60,7 +60,9 @@ public class DeepCopyWithRandomPointer {
 			return null;
 		
 		RandomListNode dummy = new RandomListNode(0);
+		RandomListNode temHead = head;
 		
+		//copy the linked list with double 
 		while(true){
 			
 			RandomListNode current = new RandomListNode(head.label);
@@ -81,6 +83,25 @@ public class DeepCopyWithRandomPointer {
 			
 			head = head.next.next;
 		}
+		
+		//second loop to modify the temHead
+		head = temHead;
+		boolean original = true;
+		RandomListNode pre = head;
+		while(head!=null){
+			if(original){
+				pre = head;
+				original = false;
+				head = head.next;
+			}else{
+				head.random = pre.random.next;
+				original = true;
+				head = head.next;
+			}
+		}
+		
+		//recover the linked list
+		
 		
 		
 		return dummy.next;
