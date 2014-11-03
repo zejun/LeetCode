@@ -9,6 +9,12 @@ public class LinkedListTester {
 		
 	}
 	
+	//iterator to print out all the elements
+	public static void iterator(){
+		
+		
+	}
+	
 	private void generator(){
 		
 		

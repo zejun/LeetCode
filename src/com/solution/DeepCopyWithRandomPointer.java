@@ -15,7 +15,7 @@ public class DeepCopyWithRandomPointer {
 		//first iteration copy the regular add hash map to store all the point object
 		RandomListNode dummy = new RandomListNode(0);
 		RandomListNode tem = head;
-		RandomListNode pre;
+		RandomListNode pre = head;
 		
 		while(tem!=null){
 			//build up current item
@@ -23,11 +23,13 @@ public class DeepCopyWithRandomPointer {
 			
 			//test for first item
 			if(dummy.next==null){
-				pre = tem;
+				
 				dummy.next = current;
+			}else{
+				pre.next = current;
+				
 			}
-			
-			
+			tem = tem.next;
 		}
 		
 		
