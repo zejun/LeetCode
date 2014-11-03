@@ -53,4 +53,13 @@ public class DeepCopyWithRandomPointer {
 		
 	}
 	
+	//solution without hashmap
+	public static RandomListNode solutionII(RandomListNode head){
+		
+		
+		
+		
+		return null;
+	}
+	
 }
