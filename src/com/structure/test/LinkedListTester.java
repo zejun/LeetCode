@@ -21,6 +21,16 @@ public class LinkedListTester {
 		System.out.println();
 	}
 	
+	//iterator to print out all the random elements
+	public static void randomIterator(RandomListNode head){
+		
+		while(head!=null){
+			System.out.print(head.random.label+" ");
+			head = head.next;
+		}
+		System.out.println();
+	}
+	
 	private void generator(){
 		
 		

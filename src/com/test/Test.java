@@ -34,13 +34,13 @@ public class Test {
 		n2.random = n1;
 		n3.random = n2;
 		n4.random = n5;
-		n5.random = n1;
+		n5.random = n2;
 		
 		LinkedListTester.iterator(n1);
 		RandomListNode test = DeepCopyWithRandomPointer.solution(n1);
 		LinkedListTester.iterator(test);
-		System.out.println(n1.random);
-		System.out.println(test.random);
+		LinkedListTester.randomIterator(n1);
+		LinkedListTester.randomIterator(test);
 		
 		
 		/**

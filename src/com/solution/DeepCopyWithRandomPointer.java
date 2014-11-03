@@ -13,13 +13,18 @@ public class DeepCopyWithRandomPointer {
 		
 		//first method copy with two iteration
 		//first iteration copy the regular add hash map to store all the point object
+		HashMap<RandomListNode,RandomListNode> map = new HashMap<RandomListNode,RandomListNode>();
 		RandomListNode dummy = new RandomListNode(0);
-		RandomListNode tem = head;
+		RandomListNode current = head;
 		RandomListNode pre = dummy;
 		
 		while(head!=null){
 			//build up current item
-			RandomListNode current = new RandomListNode(head.label);
+			if(map.containsKey(head)){
+				current = map.get(head);
+			}else{
+				current = new RandomListNode(head.label);
+			}
 			
 			//test for first item
 			if(dummy.next==null){
@@ -27,6 +32,18 @@ public class DeepCopyWithRandomPointer {
 			}else{
 				pre.next = current;
 			}
+			
+			//handle random pointer
+			if(head.random!=null){
+				if(map.containsKey(head.random)){
+					current.random = map.get(head.random);
+				}else{
+					RandomListNode newNode = new RandomListNode(head.random.label);
+					map.put(head.random, newNode);
+					current.random = newNode;
+				}
+			}
+			
 			pre = current;
 			head = head.next;
 		}
