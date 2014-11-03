@@ -13,7 +13,7 @@ public class LinkedListTester {
 	
 	//iterator to print out all the elements
 	public static void iterator(RandomListNode head){
-		System.out.println("Test for random list node head "+head.label);
+
 		while(head!=null){
 			System.out.print(head.label+" ");
 			head=head.next;
