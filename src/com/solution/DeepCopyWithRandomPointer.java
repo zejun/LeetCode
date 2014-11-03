@@ -17,22 +17,18 @@ public class DeepCopyWithRandomPointer {
 		RandomListNode tem = head;
 		RandomListNode pre = dummy;
 		
-		while(tem!=null){
+		while(head!=null){
 			//build up current item
-			RandomListNode current = new RandomListNode(tem.label);
-			
-			//test current label
+			RandomListNode current = new RandomListNode(head.label);
 			
 			//test for first item
 			if(dummy.next==null){
-				pre.next = dummy;
 				dummy.next = current;
 			}else{
 				pre.next = current;
-				pre = current;
 			}
-			
-			tem = tem.next;
+			pre = current;
+			head = head.next;
 		}
 		
 		
