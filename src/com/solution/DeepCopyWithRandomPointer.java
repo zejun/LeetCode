@@ -31,7 +31,7 @@ public class DeepCopyWithRandomPointer {
 		}
 		
 		
-		return null;
+		return dummy.next;
 		
 	}
 	
