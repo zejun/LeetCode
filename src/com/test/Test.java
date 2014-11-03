@@ -16,20 +16,45 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
+		 * Test for random linked list
+		 */
+		//build up random linked list 
+		RandomListNode n1 = new RandomListNode(1);
+		RandomListNode n2 = new RandomListNode(2);
+		RandomListNode n3 = new RandomListNode(3);
+		RandomListNode n4 = new RandomListNode(4);
+		RandomListNode n5 = new RandomListNode(5);
+		
+		n1.next = n2;
+		n2.next = n3;
+		n3.next = n4;
+		n4.next = n5;
+		
+		n1.random = n3;
+		n2.random = n1;
+		n3.random = n2;
+		n4.random = n5;
+		n5.random = n1;
+		
+		DeepCopyWithRandomPointer.solution(n1);
+		
+		
+		
+		/**
 		 * Test for word break 
 		 */
-		String s = "leetcode";
-		String[] dictStr = {"lee","tcode","leet","code"};
-		
-		Set<String> dict = new HashSet<String>();
-		for(int i=0;i<dictStr.length;i++){
-			dict.add(dictStr[i]);
-		}
-		
-		
-		//System.out.println(s.substring(1,2));
-		
-		System.out.println(WordBreak.wordBreakII(s, dict));
+//		String s = "leetcode";
+//		String[] dictStr = {"lee","tcode","leet","code"};
+//		
+//		Set<String> dict = new HashSet<String>();
+//		for(int i=0;i<dictStr.length;i++){
+//			dict.add(dictStr[i]);
+//		}
+//		
+//		
+//		//System.out.println(s.substring(1,2));
+//		
+//		System.out.println(WordBreak.wordBreakII(s, dict));
 		
 		
 		/**
