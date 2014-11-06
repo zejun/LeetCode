@@ -16,37 +16,42 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
+		 * Test for single number
+		 */
+		
+		
+		/**
 		 * Test for random linked list
 		 */
 		//build up random linked list 
-		RandomListNode n1 = new RandomListNode(1);
-		RandomListNode n2 = new RandomListNode(2);
-		RandomListNode n3 = new RandomListNode(3);
-		RandomListNode n4 = new RandomListNode(4);
-		RandomListNode n5 = new RandomListNode(5);
-		
-		n1.next = n2;
-		n2.next = n3;
-		n3.next = n4;
-		n4.next = n5;
-		
-		n1.random = n3;
-		n2.random = n1;
-		n3.random = n2;
-		n4.random = n5;
-		n5.random = n2;
-		
+//		RandomListNode n1 = new RandomListNode(1);
+//		RandomListNode n2 = new RandomListNode(2);
+//		RandomListNode n3 = new RandomListNode(3);
+//		RandomListNode n4 = new RandomListNode(4);
+//		RandomListNode n5 = new RandomListNode(5);
+//		
+//		n1.next = n2;
+//		n2.next = n3;
+//		n3.next = n4;
+//		n4.next = n5;
+//		
+//		n1.random = n3;
+//		n2.random = n1;
+//		n3.random = n2;
+//		n4.random = n5;
+//		n5.random = n2;
+//		
+////		LinkedListTester.iterator(n1);
+////		RandomListNode test1 = DeepCopyWithRandomPointer.solution(n1);
+////		LinkedListTester.iterator(test1);
+////		LinkedListTester.randomIterator(n1);
+////		LinkedListTester.randomIterator(test1);
+//		
 //		LinkedListTester.iterator(n1);
-//		RandomListNode test1 = DeepCopyWithRandomPointer.solution(n1);
-//		LinkedListTester.iterator(test1);
+//		RandomListNode test = DeepCopyWithRandomPointer.solutionII(n1);
+//		LinkedListTester.iterator(test);
 //		LinkedListTester.randomIterator(n1);
-//		LinkedListTester.randomIterator(test1);
-		
-		LinkedListTester.iterator(n1);
-		RandomListNode test = DeepCopyWithRandomPointer.solutionII(n1);
-		LinkedListTester.iterator(test);
-		LinkedListTester.randomIterator(n1);
-		LinkedListTester.randomIterator(test);
+//		LinkedListTester.randomIterator(test);
 		
 		
 		/**
