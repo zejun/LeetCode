@@ -25,7 +25,7 @@ public class LinkedListTester {
 	public static void randomIterator(RandomListNode head){
 		
 		while(head!=null){
-			System.out.print(head.random+" ");
+			System.out.print(head.random.label+" ");
 			head = head.next;
 		}
 		System.out.println();
