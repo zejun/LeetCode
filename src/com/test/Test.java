@@ -18,7 +18,9 @@ public class Test {
 		/**
 		 * Test for single number
 		 */
-		
+		int[] test = {1,1,2,2,3,3,4};
+		int res = SingleNumber.solutionII(test);
+		System.out.println("The result is "+res);
 		
 		/**
 		 * Test for random linked list
