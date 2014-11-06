@@ -59,52 +59,40 @@ public class DeepCopyWithRandomPointer {
 		if(head==null)
 			return null;
 		
-		RandomListNode dummy = new RandomListNode(0);
-		RandomListNode temHead = head;
+		RandomListNode current = head;
 		
-		//copy the linked list with double 
-		while(true){
+		while(current!=null){
 			
-			RandomListNode current = new RandomListNode(head.label);
-			//check first element
-			if(dummy.next==null)
-				dummy.next = head;
+			RandomListNode new_node = new RandomListNode(current.label);
 			
-			//check if current is end of linked list 
-			if(head.next==null){
-				head.next = current;
-				break;
-			}else{
-				RandomListNode tem = head.next;
-				head.next = current;
-				current.next = tem;
-				
-			}
-			
-			head = head.next.next;
+			new_node.next = current.next;
+			current.next = new_node;
+			current = new_node.next;
 		}
 		
-		//second loop to modify the temHead
-		head = temHead;
-		boolean original = true;
-		RandomListNode pre = head;
-		while(head!=null){
-			if(original){
-				pre = head;
-				original = false;
-				head = head.next;
-			}else{
-				head.random = pre.random.next;
-				original = true;
-				head = head.next;
+		current = head;
+		while(current!=null){
+			if(current.random!=null){
+				current.next.random = current.random.next;
 			}
+			current = current.next.next;
 		}
 		
-		//recover the linked list
+		current = head;
+		RandomListNode new_head = head.next;
+		RandomListNode copied_current = new_head;
 		
-		
-		
-		return dummy.next;
+		while(current!=null){
+			copied_current = current.next;
+			current.next = copied_current.next;
+			
+			if(copied_current.next!=null){
+				copied_current.next = copied_current.next.next;
+			}
+			
+			current = current.next;
+		}
+		return new_head;
 	}
 	
 }

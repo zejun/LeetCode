@@ -37,10 +37,10 @@ public class Test {
 		n5.random = n2;
 		
 //		LinkedListTester.iterator(n1);
-//		RandomListNode test = DeepCopyWithRandomPointer.solution(n1);
-//		LinkedListTester.iterator(test);
+//		RandomListNode test1 = DeepCopyWithRandomPointer.solution(n1);
+//		LinkedListTester.iterator(test1);
 //		LinkedListTester.randomIterator(n1);
-//		LinkedListTester.randomIterator(test);
+//		LinkedListTester.randomIterator(test1);
 		
 		LinkedListTester.iterator(n1);
 		RandomListNode test = DeepCopyWithRandomPointer.solutionII(n1);
