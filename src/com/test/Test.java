@@ -18,8 +18,9 @@ public class Test {
 		/**
 		 * Test for single number
 		 */
-		int[] test = {1,1,2,2,3,3,4};
-		int res = SingleNumber.solutionII(test);
+		int[] test = {1,2,2,2,3,3,3,4,4,4};
+		//int res = SingleNumber.solutionII(test);
+		int res = SingleNumber.singleNumberII(test);
 		System.out.println("The result is "+res);
 		
 		/**
