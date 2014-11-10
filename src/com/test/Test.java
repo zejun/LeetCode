@@ -15,13 +15,17 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
+		int[] test = {1,2,3};
+		int result = Candy.solution(test);
+		System.out.println("The result is "+result);
+		
 		/**
 		 * Test for single number
 		 */
-		int[] test = {1,2,2,2,3,3,3,4,4,4};
-		//int res = SingleNumber.solutionII(test);
-		int res = SingleNumber.singleNumberII(test);
-		System.out.println("The result is "+res);
+//		int[] test = {1,2,2,2,3,3,3,4,4,4};
+//		//int res = SingleNumber.solutionII(test);
+//		int res = SingleNumber.singleNumberII(test);
+//		System.out.println("The result is "+res);
 		
 		/**
 		 * Test for random linked list
