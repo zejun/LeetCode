@@ -15,9 +15,22 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
-		int[] test = {1,2,3};
-		int result = Candy.solution(test);
-		System.out.println("The result is "+result);
+		/**
+		 * Test for gas station
+		 */
+		int gas[] = {4};
+		int cost[] = {5};
+		int testResult = GasStation.solutionI(gas, cost);
+		System.out.println("The result is "+testResult);
+		
+		
+		
+		/**
+		 * Test method for candy
+		 */
+//		int[] test = {1,2,3};
+//		int result = Candy.solution(test);
+//		System.out.println("The result is "+result);
 		
 		/**
 		 * Test for single number
