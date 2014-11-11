@@ -16,12 +16,18 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
+		 * Test for clone the graph
+		 */
+		
+		
+		
+		/**
 		 * Test for gas station
 		 */
-		int gas[] = {1,2,3,3};
-		int cost[] = {2,1,5,1};
-		int testResult = GasStation.solutionII(gas, cost);
-		System.out.println("The result is "+testResult);
+//		int gas[] = {1,2,3,3};
+//		int cost[] = {2,1,5,1};
+//		int testResult = GasStation.solutionII(gas, cost);
+//		System.out.println("The result is "+testResult);
 		
 		
 		
