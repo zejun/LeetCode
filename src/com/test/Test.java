@@ -18,9 +18,9 @@ public class Test {
 		/**
 		 * Test for gas station
 		 */
-		int gas[] = {4};
-		int cost[] = {5};
-		int testResult = GasStation.solutionI(gas, cost);
+		int gas[] = {1,2,3,3};
+		int cost[] = {2,1,5,1};
+		int testResult = GasStation.solutionII(gas, cost);
 		System.out.println("The result is "+testResult);
 		
 		

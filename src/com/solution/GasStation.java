@@ -24,8 +24,6 @@ public class GasStation {
 				tank+=gas[index];
 				tem = tank-cost[index];
 				
-				System.out.println("tem "+tem);
-				
 				if(tem<0){
 					tank-=cost[index];
 					break;
@@ -49,7 +47,28 @@ public class GasStation {
 	//O(n) solution
 	public static int solutionII(int[] gas, int[] cost){
 		
+		int tank = 0;
+		int previous = 0;
+		int index = 0;
 		
+		for(int i=0;i<gas.length;i++){
+			System.out.println("Previous "+i+" "+previous);
+			tank=tank+gas[i]-cost[i];
+			previous += gas[i]-cost[i];
+			if(tank<0){
+				previous+=tank;
+				tank = 0;
+				index=i+1;
+			}
+		}
+		
+		
+		
+		if(tank+previous>=0){
+			return index;
+		}else{
+			return -1;
+		}
 		
 	}
 
