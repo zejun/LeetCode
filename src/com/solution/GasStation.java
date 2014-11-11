@@ -46,6 +46,11 @@ public class GasStation {
 		return -1;
 	}
 	
-	
+	//O(n) solution
+	public static int solutionII(int[] gas, int[] cost){
+		
+		
+		
+	}
 
 }
