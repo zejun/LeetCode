@@ -1,6 +1,7 @@
 package com.solution;
 
 import java.util.HashMap;
+import java.util.Stack;
 
 import com.structure.*;
 
@@ -15,16 +16,20 @@ import com.structure.*;
 
 public class CloneGraph {
 	
+	HashMap<UndirectedGraphNode,UndirectedGraphNode> copied;
+	
 	//first solution with DFS 
-	public static UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 		
+		copied = new HashMap<UndirectedGraphNode,UndirectedGraphNode>();
 		
 		
 		return node;
-        
     }
 	
-	public static UndirectedGraphNode DFSHelper(UndirectedGraphNode node, HashMap<Integer,UndirectedGraphNode> record){
+	public UndirectedGraphNode DFSHelper(UndirectedGraphNode node,Stack<UndirectedGraphNode> record){
+		
+		
 		
 		return null;
 	}
