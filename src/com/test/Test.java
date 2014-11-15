@@ -16,6 +16,14 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
+		 * test for binary search
+		 */
+		int[] nums = {1,2,4,4,5,6,7};
+		int target = 4;
+		
+		
+		System.out.println(BinarySearch.solution(nums, target));
+		/**
 		 * Test for clone the graph
 		 */
 		
