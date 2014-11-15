@@ -98,6 +98,7 @@ public class BinarySearch {
 		
 		if(A[A.length]<target){
 			return A.length;
+			
 		}
 		
 		while(start+1<end){
