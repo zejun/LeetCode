@@ -87,5 +87,40 @@ public class BinarySearch {
         return result;
 		
 	}
+	
+	public static int InserationPosition(int[] A, int target){
+		int start = 0;
+		int end = A.length;
+		
+		if(A[0]>target){
+			return 0;
+		}
+		
+		if(A[A.length]<target){
+			return A.length;
+		}
+		
+		while(start+1<end){
+			int mid = start+(end-start)/2;
+			
+			if(A[mid]==target){
+				end = mid;
+			}else if(A[mid]>target){
+				end = mid;
+			}else if(A[mid]<target){
+				start = mid;
+			}
+			
+		}
+		
+		if(A[start]==target){
+			return start;
+		}else if(A[end]==target){
+			return end;
+		}
+		
+		return start+1;
+		
+	}
 
 }
