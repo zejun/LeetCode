@@ -16,13 +16,20 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
+		 * test for rotated array search
+		 */
+		int[] nums = {5,6,1,2,3,4};
+		int result = BinarySearch.binarySearchRotatedArray(nums, 1);
+		System.out.println(result);
+		
+		/**
 		 * test for binary search
 		 */
-		int[] nums = {1,2,4,4,5,6,7};
-		int target = 4;
-		
-		
-		System.out.println(BinarySearch.solution(nums, target));
+//		int[] nums = {1,2,4,4,5,6,7};
+//		int target = 4;
+//		
+//		
+//		System.out.println(BinarySearch.solution(nums, target));
 		/**
 		 * Test for clone the graph
 		 */
