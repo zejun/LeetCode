@@ -169,5 +169,77 @@ public class BinarySearch {
 		return -1;
 		
 	}
+	
+	/**
+	 * find a node in 2D matrix
+	 * @param A
+	 * @param target
+	 * @return
+	 */
+	public static boolean search2DMatrix(ArrayList<ArrayList<Integer>> matrix, int target){
+		// write your code
+        
+        if (matrix.size() == 0 || matrix == null){
+            return false;
+        }
+        
+        int xStart = 0;
+        int xEnd = matrix.size() - 1;
+        
+        while (xStart + 1 < xEnd){
+            int xMid = xStart + (xEnd - xStart) / 2;
+            if (matrix.get(xMid).get(0) == target){
+                return true;
+            } else if (matrix.get(xMid).get(0) < target){
+                xStart = xMid;
+            } else {
+                xEnd = xMid;
+            }
+        }
+        
+        if (matrix.get(xStart).get(0) == target){
+            return true;
+        }
+        
+        if (matrix.get(xEnd).get(0) == target){
+            return true;
+        }
+        
+        int x = 0;
+        
+        if (matrix.get(xEnd).get(0) < target){
+            x = xEnd;
+        } else if (matrix.get(xEnd).get(0) > target){
+            x = xStart;
+        }
+        
+         
+        
+        //second binary search
+        int yStart = 0;
+        int yEnd = matrix.get(x).size() - 1;
+        
+        while (yStart + 1 < yEnd){
+            int yMid = yStart + (yEnd - yStart) / 2;
+            if (matrix.get(x).get(yMid) == target){
+                return true;
+            } else if (matrix.get(x).get(yMid) < target){
+                yStart = yMid;
+            } else {
+                yEnd = yMid;
+            }
+        }
+        
+        if (matrix.get(x).get(yStart) == target){
+            return true;
+        }
+        
+        if (matrix.get(x).get(yEnd) == target){
+            return true;
+        }
+        
+        return false;
+		
+	}
 
 }
