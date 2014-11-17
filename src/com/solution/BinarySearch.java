@@ -241,5 +241,38 @@ public class BinarySearch {
         return false;
 		
 	}
+	
+	/**
+	 * Solution for search a 2-D matrix 
+	 */
+	public static boolean search2DMatrixII(ArrayList<ArrayList<Integer>> matrix, int target){
+		int row = matrix.size();
+		int col = matrix.get(0).size();
+		
+		int start = 0;
+		int end = row * col - 1;
+		
+		while (start + 1 < end){
+			int mid = start + (end - start) / 2;
+			int val = matrix.get(mid / col).get(mid % col);
+			if (val == target){
+				return true;
+			} else if (val > target){
+				end = mid;
+			} else if (val < target){
+				start = mid;
+			}
+		}
+		
+		if (matrix.get(start / col).get(start % col) == target){
+			return true;
+		}
+		
+		if(matrix.get(end / col).get(end % col) == target){
+			return true;
+		}
+		
+		return false;
+	}
 
 }
