@@ -47,7 +47,30 @@ public class BinarySearch {
 	 */
 	public int solutionII(int[] nums,int target){
 		
+		return binarySearchHelper(nums, target, 0, nums.length-1);
+		
+	}
+	
+	public static int binarySearchHelper(int[] nums, int target, int start, int end){
+		if(start + 1 < end){
+			int mid = start + (end - start) / 2;
+			if(nums[mid]==target){
+				return binarySearchHelper(nums,target,start,mid);
+			} else if (nums[mid] > target){
+				return binarySearchHelper(nums, target, start, mid);
+			} else if (nums[mid] < target){
+				return binarySearchHelper(nums, target, mid, end);
+			}
+		} 
+		if(nums[start]==target){
+			return start;
+		}
+		if(nums[end]==target){
+			return end;
+		}
 		return -1;
+		
+		
 	}
 	
 	public static int[] binarySearchRange(int[] A, int target){

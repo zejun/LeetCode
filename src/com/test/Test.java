@@ -18,8 +18,8 @@ public class Test {
 		/**
 		 * test for rotated string
 		 */
-		String test = "abcd";
-		System.out.println(Rotate.rotateString(test, 1));
+		String test = "abccba";
+		System.out.println(Rotate.rotateString(test, 4));
 		
 		/**
 		 * test for rotated array search
