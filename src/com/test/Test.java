@@ -16,11 +16,17 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
+		 * test for rotated string
+		 */
+		String test = "abcd";
+		System.out.println(Rotate.rotateString(test, 1));
+		
+		/**
 		 * test for rotated array search
 		 */
-		int[] nums = {5,6,1,2,3,4};
-		int result = BinarySearch.binarySearchRotatedArray(nums, 1);
-		System.out.println(result);
+//		int[] nums = {5,6,1,2,3,4};
+//		int result = BinarySearch.binarySearchRotatedArray(nums, 1);
+//		System.out.println(result);
 		
 		/**
 		 * test for binary search
