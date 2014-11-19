@@ -54,8 +54,6 @@ public class BinaryTreePreOrderTraversal {
 		result.add(root.val);
 		travsal(root.left,result);
 		travsal(root.right,result);
-		
-		
 	}
 	
 }
