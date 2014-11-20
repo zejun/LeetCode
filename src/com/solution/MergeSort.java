@@ -8,6 +8,8 @@ public class MergeSort {
 	
 	public static int[] mergeSort(int[] data, int left, int right){
 		
+		String A = "abc";
+		
 		if (left >= right){
 			return data;
 		}
