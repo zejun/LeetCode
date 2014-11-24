@@ -15,34 +15,38 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
+		int[] test = {2, 3};
+		int[] result = Sum.twosum(test, 5);
+		System.out.println(result[0] + " " + result[1]);
+		
 		/**
 		 * test for reverse linked list
 		 */
-		ListNode l1 = new ListNode(1);
-		ListNode l2 = new ListNode(2);
-		ListNode l3 = new ListNode(3);
-		ListNode l4 = new ListNode(4);
-		ListNode l5 = new ListNode(5);
-		
-		l1.next = l2;
-		l2.next = l3;
-		l3.next = l4;
-		l4.next = l5;
-		
-		ListNode ori = l1;
-		while (ori != null){
-			System.out.print(ori.val + " ");
-			ori = ori.next;
-		}
-		System.out.println();
-		ListNode tem = Reverse.reverseLinkedList(l1);
-		
-		
-		while (tem != null){
-			System.out.print(tem.val+" ");
-			tem = tem.next;
-		}
-		
+//		ListNode l1 = new ListNode(1);
+//		ListNode l2 = new ListNode(2);
+//		ListNode l3 = new ListNode(3);
+//		ListNode l4 = new ListNode(4);
+//		ListNode l5 = new ListNode(5);
+//		
+//		l1.next = l2;
+//		l2.next = l3;
+//		l3.next = l4;
+//		l4.next = l5;
+//		
+//		ListNode ori = l1;
+//		while (ori != null){
+//			System.out.print(ori.val + " ");
+//			ori = ori.next;
+//		}
+//		System.out.println();
+//		ListNode tem = Reverse.reverseLinkedList(l1);
+//		
+//		
+//		while (tem != null){
+//			System.out.print(tem.val+" ");
+//			tem = tem.next;
+//		}
+//		
 		
 		/**
 		 * test for rotated string
