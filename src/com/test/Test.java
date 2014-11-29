@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.solution.*;
+import com.solution.test.DynamicProgramTest;
 import com.structure.*;
 import com.structure.test.LinkedListTester;
 
@@ -15,9 +16,13 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
-		int[] test = {2, 3};
-		int[] result = Sum.twosum(test, 5);
-		System.out.println(result[0] + " " + result[1]);
+		Set<String> test = new HashSet<String>();
+		String testStr = "abc";
+		test.add("a");
+		System.out.println(Character.toString(testStr.charAt(0)) );
+		System.out.println(test.contains(Character.toString(testStr.charAt(0))));
+		
+		//DynamicProgramTest.triangleMatrix();
 		
 		/**
 		 * test for reverse linked list
