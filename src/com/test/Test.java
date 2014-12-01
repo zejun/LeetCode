@@ -1,6 +1,7 @@
 package com.test;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -16,12 +17,25 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
-		Set<String> test = new HashSet<String>();
-		String testStr = "abc";
-		test.add("a");
-		System.out.println(Character.toString(testStr.charAt(0)) );
-		System.out.println(test.contains(Character.toString(testStr.charAt(0))));
+		ArrayList<Integer> test = new ArrayList<Integer>();
+//		test.add(3);
+//		test.add(4);
+//		test.add(8);
+//		test.add(5);
 		
+		
+		int[] testData = {828,125,740,724,983,321,773,678,841,842,875,377,674,
+				144,340,467,625,916,463,922,255,662,692,123,778,766,254,559,480,
+				483,904,60,305,966,872,935,626,691,832,998,508,657,215,162,858,
+				179,869,674,452,158,520,138,847,452,764,995,600,568,92,496,533,
+				404,186,345,304,420,181,73,547,281,374,376,454,438,553,929,140,
+				298,451,674,91,531,685,862,446,262,477,573,627,624,814,103,294,388};
+		for (int i = 0; i < testData.length; i++){
+			test.add(testData[i]);
+		}
+		
+		int result = DynamicProgram.backPack(5000, test);
+		System.out.println(result);
 		//DynamicProgramTest.triangleMatrix();
 		
 		/**
