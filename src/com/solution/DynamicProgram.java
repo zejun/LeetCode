@@ -1,6 +1,7 @@
 package com.solution;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -95,6 +96,7 @@ public class DynamicProgram {
 	public static int backPack(int m, ArrayList<Integer> A){
 		
 		// write your code here
+		
         boolean[][] matrix = new boolean[A.size() + 1][m + 1];
         matrix[0][0] = true;
         for (int i = 1; i < m; i++){
@@ -102,27 +104,26 @@ public class DynamicProgram {
         }
         for (int i = 1; i <= A.size(); i++){
             for (int j = 0; j <= m; j++){
-                if (j - A.get(i - 1) < 0){
-                    matrix[i][j] = matrix[i - 1][j];
-                } else {
-                    matrix[i][j] = matrix[i - 1][j - A.get(i - 1)];
-                }
+            	for (int k = 1; k <= i; k++){
+            		if (j - A.get(i - k) < 0){
+            			matrix[i][j] = matrix[i - k][j];
+            		} else {
+            			matrix[i][j] = matrix[i - k][j - A.get(i - k)];
+            		}
+            		if (matrix[i][j])
+            			break;
+            	}
+
             }
         }
         
-        for (int i = 1; i <= A.size(); i++){
-            for (int j = 0; j <= m; j++){
-            	if(j == 5000)
-            		System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
         
         
         int max = 0;
         for (int i = m ; i >=0; i--){
             if (matrix[A.size()][i]){
                 max = Math.max(max, i);
+                break;
             }
         }
         return max;
