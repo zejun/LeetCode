@@ -12,8 +12,13 @@ public class Array {
 		if (nums == null){
 			return result;
 		}
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		helper(result,list,nums);
+		return result;
 		
-		
+	}
+	
+	private static void helper(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> list, ArrayList<Integer> nums){
 		
 	}
 	
