@@ -2,6 +2,7 @@ package com.test;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +18,20 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
-		ArrayList<Integer> test = new ArrayList<Integer>();
+		HashMap map = new HashMap();
+		for (Object key : map.keySet()){
+			
+		}
+		
+		/**
+		 * Test for 3 sum slosest
+		 */
+		int[] test = {1,2,33,23,2423,33,23,1,7,6,8787,5,33,2,3,-23,-54,-67,100,400,-407,-500,-35,-8,0,0,7,6,0,1,2,-56,-89,24,2};
+		int result = Sum.threeSumClosest(test, 148);
+		System.out.println(result);
+		
+		
+//		ArrayList<Integer> test = new ArrayList<Integer>();
 //		test.add(3);
 //		test.add(4);
 //		test.add(8);
@@ -31,14 +45,14 @@ public class Test {
 //				404,186,345,304,420,181,73,547,281,374,376,454,438,553,929,140,
 //				298,451,674,91,531,685,862,446,262,477,573,627,624,814,103,294,388};
 		
-		int[] testData = {3, 4, 8, 5};
-		
-		for (int i = 0; i < testData.length; i++){
-			test.add(testData[i]);
-		}
-		
-		int result = DynamicProgram.backPack(10, test);
-		System.out.println("\n"+result);
+//		int[] testData = {3, 4, 8, 5};
+//		
+//		for (int i = 0; i < testData.length; i++){
+//			test.add(testData[i]);
+//		}
+//		
+//		int result = DynamicProgram.backPack(10, test);
+//		System.out.println("\n"+result);
 		//DynamicProgramTest.triangleMatrix();
 		
 		/**

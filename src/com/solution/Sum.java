@@ -33,7 +33,7 @@ public class Sum {
 	}
 	
 	//3 sum closest to target
-	public int threeSumClosest(int[] numbers, int target) {
+	public static int threeSumClosest(int[] numbers, int target) {
         // write your code here
         
         if (numbers == null || numbers.length < 3){
@@ -41,7 +41,7 @@ public class Sum {
         }
         
         Arrays.sort(numbers);
-        int closest = numbers[0] + numbers[1] + numbers[2];
+        int closest = Integer.MAX_VALUE / 2;;
         
         for (int i = 0; i < numbers.length; i++){
             int left = i + 1;
@@ -49,16 +49,22 @@ public class Sum {
             
             while (left < right){
                 int sum = numbers[i] + numbers[left] + numbers[right];
-                int dist = Math.abs(target - sum);
+                if (sum == target){
+                	return sum;
+                } else if (sum < target){
+                	left++;
+                } else {
+                	right--;
+                }
                 if (Math.abs(target - sum) < Math.abs(target - closest)){
                     closest = sum;
                 } 
-                left++;
-                right--;
             }
             
         }
         return closest;
     }
+	
+	
 
 }
