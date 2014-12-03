@@ -2,6 +2,7 @@ package com.test;
 
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -18,17 +19,38 @@ public class Test {
 	public static void main(String args[]){
 		System.out.println("Test method");
 		
-		HashMap map = new HashMap();
-		for (Object key : map.keySet()){
+		/**
+		 * Test function for array permutation
+		 */
+		ArrayList<Integer> test = new ArrayList<Integer>();
+
+		int[] testData = {6, 2, 3};
+		
+		for (int i = 0; i < testData.length; i++){
+			test.add(testData[i]);
+		}
+		Collections.sort(test);
+		for (int i = 0; i < test.size(); i++){
+			System.out.print(test.get(i)+" ");
 			
 		}
+		System.out.println();
+		ArrayList<ArrayList<Integer>> result = Array.permutation(test);
+		
+		for (int i = 0; i < result.size(); i++){
+			for (int j = 0; j < result.get(i).size(); j++){
+				System.out.print(result.get(i).get(j)+" ");
+			}
+			System.out.println();
+		}
+
 		
 		/**
 		 * Test for 3 sum slosest
 		 */
-		int[] test = {1,2,33,23,2423,33,23,1,7,6,8787,5,33,2,3,-23,-54,-67,100,400,-407,-500,-35,-8,0,0,7,6,0,1,2,-56,-89,24,2};
-		int result = Sum.threeSumClosest(test, 148);
-		System.out.println(result);
+//		int[] test = {1,2,33,23,2423,33,23,1,7,6,8787,5,33,2,3,-23,-54,-67,100,400,-407,-500,-35,-8,0,0,7,6,0,1,2,-56,-89,24,2};
+//		int result = Sum.threeSumClosest(test, 148);
+//		System.out.println(result);
 		
 		
 //		ArrayList<Integer> test = new ArrayList<Integer>();
