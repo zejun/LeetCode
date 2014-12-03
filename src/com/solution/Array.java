@@ -2,6 +2,7 @@ package com.solution;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Array {
 
@@ -69,6 +70,55 @@ public class Array {
             result.add(tem);
         }
         return result;
+    }
+    
+    /**
+     * Palindrome partition
+     * @param s
+     * @return
+     */
+    
+    public static List<List<String>> partition(String s) {
+        List<List<String>> result = new ArrayList<List<String>>();
+        if (s == null || s == ""){
+            return result;
+        }
+        List<String> row = new ArrayList<String>();
+        int index = 0;
+        search(s, row, index, result);
+        return result;
+    }
+    
+    private static void search(String s, List<String> row, int index, List<List<String>> result){
+    
+        if (index == s.length()){
+            result.add(new ArrayList<String>(row));
+            return;
+        }
+        
+        //judge the last element of tem add char is a palindrom
+        for (int i = index + 1; i <= s.length(); i++){
+        	String prefix = s.substring(index, i);
+        	if (!isValid(prefix)){
+        		continue;
+        	}
+            row.add(prefix);
+            search(s, row, i, result);
+            row.remove(row.size() - 1);
+        }
+    }
+    
+    private static boolean isValid(String s){
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j){
+            if (s.charAt(i) != s.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
     }
 	
 }

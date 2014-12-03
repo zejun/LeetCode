@@ -20,29 +20,40 @@ public class Test {
 		System.out.println("Test method");
 		
 		/**
-		 * Test function for array permutation
+		 * Test for palindrome sepration
 		 */
-		ArrayList<Integer> test = new ArrayList<Integer>();
-
-		int[] testData = {6, 2, 3};
-		
-		for (int i = 0; i < testData.length; i++){
-			test.add(testData[i]);
-		}
-		Collections.sort(test);
+		List<List<String>> test = Array.partition("a");
 		for (int i = 0; i < test.size(); i++){
-			System.out.print(test.get(i)+" ");
-			
-		}
-		System.out.println();
-		ArrayList<ArrayList<Integer>> result = Array.permutation(test);
-		
-		for (int i = 0; i < result.size(); i++){
-			for (int j = 0; j < result.get(i).size(); j++){
-				System.out.print(result.get(i).get(j)+" ");
+			for (int j = 0; j < test.get(i).size(); j++){
+				System.out.print("\""+test.get(i).get(j)+"\" ");
 			}
 			System.out.println();
 		}
+		
+		/**
+		 * Test function for array permutation
+		 */
+//		ArrayList<Integer> test = new ArrayList<Integer>();
+//
+//		int[] testData = {6, 2, 3};
+//		
+//		for (int i = 0; i < testData.length; i++){
+//			test.add(testData[i]);
+//		}
+//		Collections.sort(test);
+//		for (int i = 0; i < test.size(); i++){
+//			System.out.print(test.get(i)+" ");
+//			
+//		}
+//		System.out.println();
+//		ArrayList<ArrayList<Integer>> result = Array.permutation(test);
+//		
+//		for (int i = 0; i < result.size(); i++){
+//			for (int j = 0; j < result.get(i).size(); j++){
+//				System.out.print(result.get(i).get(j)+" ");
+//			}
+//			System.out.println();
+//		}
 
 		
 		/**
