@@ -6,7 +6,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Set;
 
 import com.solution.*;
@@ -18,7 +20,6 @@ public class Test {
 	
 	public static void main(String args[]){
 		System.out.println("Test method");
-		
 		/**
 		 * Test for palindrome sepration
 		 */
