@@ -18,18 +18,58 @@ import com.structure.test.LinkedListTester;
 
 public class Test {
 	
+	private static boolean isValid(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> path){
+        boolean tem = true;
+        for (int i = 0; i < result.size(); i++){
+            
+            for (int j = 0; j < path.size(); j++){
+                if (j == path.size() - 1 && result.get(i).get(j) == path.get(j)){
+                    tem = false;
+                } else if (j < path.size() && result.get(i).get(j) == path.get(j)){
+                    continue;
+                } else {
+                    break;
+                }
+            }
+        }
+        
+        return tem;
+    }
+	
 	public static void main(String args[]){
 		System.out.println("Test method");
+		
+		System.out.println(3/2);
+		
+//		HashSet<Integer> test = new HashSet<Integer>();
+//		ArrayList<Integer> test1 = new ArrayList<Integer>();
+//		test1.add(1);
+//		test1.add(2);
+//		test1.add(3);
+//		
+//		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+//		result.add(test1);
+//		
+//		test1.remove(2);
+//		test1.add(4);
+//		
+//		ArrayList<Integer> test2 = new ArrayList<Integer>();
+//		test2.add(1);
+//		test2.add(2);
+//		test2.add(3);
+//		
+//		System.out.println("Test result "+isValid(result, test1));
+		
 		/**
 		 * Test for palindrome sepration
 		 */
-		List<List<String>> test = Array.partition("a");
-		for (int i = 0; i < test.size(); i++){
-			for (int j = 0; j < test.get(i).size(); j++){
-				System.out.print("\""+test.get(i).get(j)+"\" ");
-			}
-			System.out.println();
-		}
+//		List<List<String>> test = Array.partition("a");
+//		for (int i = 0; i < test.size(); i++){
+//			for (int j = 0; j < test.get(i).size(); j++){
+//				System.out.print("\""+test.get(i).get(j)+"\" ");
+//			}
+//			System.out.println();
+//		}
 		
 		/**
 		 * Test function for array permutation
