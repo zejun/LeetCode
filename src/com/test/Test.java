@@ -18,28 +18,35 @@ import com.structure.test.LinkedListTester;
 
 public class Test {
 	
-	private static boolean isValid(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> path){
-        boolean tem = true;
-        for (int i = 0; i < result.size(); i++){
-            
-            for (int j = 0; j < path.size(); j++){
-                if (j == path.size() - 1 && result.get(i).get(j) == path.get(j)){
-                    tem = false;
-                } else if (j < path.size() && result.get(i).get(j) == path.get(j)){
-                    continue;
-                } else {
-                    break;
-                }
-            }
+	public static int hashCode(char[] key,int HASH_SIZE) {
+        // write your code here
+        
+        if (key == null || key.length == 0 || HASH_SIZE == 0){
+            return 0;
         }
         
-        return tem;
+        int sum = 0;
+        for (int i = 0; i < key.length; i++){
+            sum += (int)key[i] * Math.pow(33, key.length - i - 1);
+        }
+        
+        return sum % HASH_SIZE;
     }
 	
 	public static void main(String args[]){
-		System.out.println("Test method");
 		
-		System.out.println(3/2);
+		char[] test = {'u','b','u','n','t','u'};
+		int result = hashCode(test, 1007);
+		System.out.println(result);
+		
+		/**
+		 * test subarray sum
+		 */
+//		int[] test = {-3, 1, 2, -3, 4};
+//		ArrayList<Integer> result = Array.subarraySum(test);
+//		
+//		System.out.println(result.get(0)+" "+ result.get(1));
+		
 		
 //		HashSet<Integer> test = new HashSet<Integer>();
 //		ArrayList<Integer> test1 = new ArrayList<Integer>();

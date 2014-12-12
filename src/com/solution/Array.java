@@ -120,5 +120,29 @@ public class Array {
         }
         return true;
     }
+    
+    public static ArrayList<Integer> subarraySum(int[] nums) {
+        // write your code here
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        if (nums.length == 0){
+            return result;
+        }
+        
+        for (int i = 0; i < nums.length; i++){
+            for (int j = i; j < nums.length; j++){
+            	System.out.println("i "+i+" j "+j+" num "+nums[i]+" "+nums[j]);
+                if (nums[i] + nums[j] == 0){
+                    result.add(i);
+                    result.add(j);
+                    
+                    return result;
+                } 
+                
+            }
+        }
+        result.add(0);
+        result.add(0);
+        return result;
+    }
 	
 }
