@@ -54,5 +54,9 @@ public class SingleNumber {
 		return ones;
 		
 	}
-
+	
+	public static int singleNumberIII(int[] A){
+		int one = 0, two = 0;
+		return 0;
+	}
 }
