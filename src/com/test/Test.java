@@ -18,26 +18,22 @@ import com.structure.test.LinkedListTester;
 
 public class Test {
 	
-	public static int hashCode(char[] key,int HASH_SIZE) {
-        // write your code here
-        
-        if (key == null || key.length == 0 || HASH_SIZE == 0){
-            return 0;
-        }
-        
-        int sum = 0;
-        for (int i = 0; i < key.length; i++){
-            sum += (int)key[i] * Math.pow(33, key.length - i - 1);
-        }
-        
-        return sum % HASH_SIZE;
-    }
-	
 	public static void main(String args[]){
 		
-		char[] test = {'u','b','u','n','t','u'};
-		int result = hashCode(test, 1007);
-		System.out.println(result);
+		ListNode tem1 = new ListNode(1);
+		ListNode tem2 = new ListNode(2);
+		tem1.next = tem2;
+		List<ListNode> test = new ArrayList<ListNode>();
+		test.add(null);
+		test.add(tem1);
+		
+		ListNode result = MeregeKSortedList.mergeKLists(test);
+		
+		System.out.println("Result ");
+		while (result != null){
+			System.out.print(result.val+" ");
+			result = result.next;
+		}
 		
 		/**
 		 * test subarray sum
