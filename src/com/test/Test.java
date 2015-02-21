@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 
 import com.solution.*;
 import com.solution.test.DynamicProgramTest;
@@ -18,22 +19,193 @@ import com.structure.test.LinkedListTester;
 
 public class Test {
 	
+	public static ListNode rotateRight(ListNode head, int n) {
+        if (head == null || head.next == null){
+            return head;
+        }
+        
+        int length = getLength(head);
+        n = n % length;
+        
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        head = dummy;
+        ListNode tail = dummy;
+        for (int i = 0; i < n; i++){
+            head = head.next;
+        }
+        
+        while (head.next != null){
+            tail = tail.next;
+            head = head.next;
+        }
+        
+        System.out.println("head " + head.val + " tail "+ tail.val);
+        
+        head.next = dummy.next;
+        dummy.next = tail.next;
+        tail.next = null;
+        
+        return dummy.next;
+    }
+	
+	private static int getLength(ListNode head){
+        int len = 0;
+        while (head != null){
+            head = head.next;
+            len++;
+        }
+        return len;
+    }
+	
+	public static int[] getNGE(int[] nums){
+		int len = nums.length;
+		if (nums == null || nums.length == 0){
+			return nums;
+		}
+		int[] result = new int[nums.length];
+		Stack<Integer> stack = new Stack<Integer>();
+		stack.push(0);
+		
+		for (int i = 1; i < nums.length; i++){
+			int next = nums[i];
+			
+			while (!stack.isEmpty() && next > nums[stack.peek()]){
+				int cur = stack.pop();
+				result[cur] = next;
+			}
+			stack.push(i);
+		}
+		
+		while (!stack.isEmpty()){
+			int index = stack.pop();
+			result[index] = nums[index];
+		}
+		return result;
+	}
+	
+	public static void printNGE(int [] arr)
+	{
+		int len= arr.length;
+		Stack<Integer> nums= new Stack<Integer>();
+		if (len==0)
+			return;
+		nums.push(arr[0]);// store arr[0] in the array.
+		// look at the rest of the array.
+		int element,next;
+		for (int i=1;i<len;i++)
+		{
+			next= arr[i];
+			element =nums.pop(); // get top from stack
+			while (element< next)
+			{
+				System.out.println("Pair " + element+ " "+next);
+				//check if the stack is empty. if yes: break else set elem for next iteration
+				if (nums.isEmpty())
+					break;
+				element=nums.pop();
+			}
+			if (element> next)
+			{
+				nums.push(element);//push back element if it is less than the next!
+			}
+			nums.push(next); //push next on to stack for future inspection.
+		}
+		// If stack is still not empty-- then these elements dont have a next greater value!
+		while(!nums.isEmpty())
+		{
+			int num = nums.pop();
+			System.out.println("Pair " + num + " " + num);
+		}
+	} 
+	
 	public static void main(String args[]){
 		
-		ListNode tem1 = new ListNode(1);
-		ListNode tem2 = new ListNode(2);
-		tem1.next = tem2;
-		List<ListNode> test = new ArrayList<ListNode>();
-		test.add(null);
-		test.add(tem1);
+//		ListNode l1 = new ListNode(1);
+//		ListNode l2 = new ListNode(2);
+//		ListNode l3 = new ListNode(3);
+//		ListNode l4 = new ListNode(4);
+//		ListNode l5 = new ListNode(5);
+//		
+//		l1.next = l2;
+//		l2.next = l3;
+//		l3.next = l4;
+//		l4.next = l5;
+//		
+//		ListNode head = rotateRight(l1, 0);
+//		while (head != null){
+//			System.out.print(head.val + " ");
+//			head = head.next;
+//		}
 		
-		ListNode result = MeregeKSortedList.mergeKLists(test);
+		int[] array = {10, 4, 3, 5, 7, 9};
+		int[] result = getNGE(array);
 		
-		System.out.println("Result ");
-		while (result != null){
-			System.out.print(result.val+" ");
-			result = result.next;
+		for (int i = 0; i < result.length; i++){
+			System.out.print(result[i] + " ");;
 		}
+		
+		/**
+		 * Compare version
+		 */
+//		String version1 = "0.1";
+//		String version2 = "1";
+//		int result = CompareVersion.compareVersion(version1, version2);
+//		System.out.println(result);
+//		
+//		String[] v1 = version1.split(".");
+//        String[] v2 = version2.split(".");
+//        System.out.println(v1[0]);
+        
+        
+		
+		/**
+		 * Reverse Linked List II
+		 */
+//		ListNode node1 = new ListNode(1);
+//		ListNode node2 = new ListNode(2);
+//		ListNode node3 = new ListNode(3);
+//		ListNode node4 = new ListNode(4);
+//		ListNode node5 = new ListNode(5);
+//		
+//		node1.next = node2;
+//		node2.next = node3;
+//		node3.next = node4;
+//		node4.next = node5;
+//		
+//		//ListNode result = Reverse.reverseLinkedListII(node1, 2, 4);
+//		ListNode result = Reverse.reverseLinkedList(node1);
+//		while (result != null){
+//			System.out.print(result.val);
+//			result = result.next;
+//		}
+		
+		/**
+		 * Test hash function
+		 */
+//		String test = "ubuntu";
+//		char[] key = test.toCharArray();
+//		int HASH_SIZE = 1007;
+//		int result = HashFunction.hashCode(key, HASH_SIZE);
+//		System.out.println(result);
+		
+		/**
+		 * Test merege K sorted list
+		 */
+//		ListNode tem1 = new ListNode(1);
+//		ListNode tem2 = new ListNode(2);
+//		tem1.next = tem2;
+//		List<ListNode> test = new ArrayList<ListNode>();
+//		test.add(null);
+//		test.add(tem1);
+//		
+//		ListNode result = MeregeKSortedList.mergeKLists(test);
+//		
+//		System.out.println("Result ");
+//		while (result != null){
+//			System.out.print(result.val+" ");
+//			result = result.next;
+//		}
 		
 		/**
 		 * test subarray sum
