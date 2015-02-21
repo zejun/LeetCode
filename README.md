@@ -1,3 +1,3 @@
 LeetCode
 ========
-Leet code practice from Zejun
+Leet code practice
