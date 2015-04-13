@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
@@ -19,131 +20,42 @@ import com.structure.test.LinkedListTester;
 
 public class Test {
 	
-	public static ListNode rotateRight(ListNode head, int n) {
-        if (head == null || head.next == null){
-            return head;
-        }
-        
-        int length = getLength(head);
-        n = n % length;
-        
-        ListNode dummy = new ListNode(-1);
-        dummy.next = head;
-        head = dummy;
-        ListNode tail = dummy;
-        for (int i = 0; i < n; i++){
-            head = head.next;
-        }
-        
-        while (head.next != null){
-            tail = tail.next;
-            head = head.next;
-        }
-        
-        System.out.println("head " + head.val + " tail "+ tail.val);
-        
-        head.next = dummy.next;
-        dummy.next = tail.next;
-        tail.next = null;
-        
-        return dummy.next;
-    }
-	
-	private static int getLength(ListNode head){
-        int len = 0;
-        while (head != null){
-            head = head.next;
-            len++;
-        }
-        return len;
-    }
-	
-	public static int[] getNGE(int[] nums){
+	//input 1, 2, 2, 1 N for the stand by time
+	public static int workTime(int[] nums, int N){
+		if (nums.length <= 1){
+			return nums.length;
+		}
+		
 		int len = nums.length;
-		if (nums == null || nums.length == 0){
-			return nums;
-		}
-		int[] result = new int[nums.length];
-		Stack<Integer> stack = new Stack<Integer>();
-		stack.push(0);
+		int count = 0;
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		
-		for (int i = 1; i < nums.length; i++){
-			int next = nums[i];
-			
-			while (!stack.isEmpty() && next > nums[stack.peek()]){
-				int cur = stack.pop();
-				result[cur] = next;
+		for (int i = 0; i < nums.length; i++){
+			if (map.size() == 0){
+				map.put(nums[i], count);
+				count++;
+			} else if (!map.containsKey(nums[i])){
+				map.put(nums[i], count);
+				count++;
+			} else if (map.containsKey(nums[i])){
+				int pre = map.get(nums[i]);
+				if (count - pre - 1 <= N){
+					count += N - (count - pre - 1);
+					map.put(nums[i], count);
+					count++;
+				} else {
+					map.put(nums[i], count);
+					count++;
+				}
+				
 			}
-			stack.push(i);
 		}
-		
-		while (!stack.isEmpty()){
-			int index = stack.pop();
-			result[index] = nums[index];
-		}
-		return result;
+		return count;
 	}
 	
-	public static void printNGE(int [] arr)
-	{
-		int len= arr.length;
-		Stack<Integer> nums= new Stack<Integer>();
-		if (len==0)
-			return;
-		nums.push(arr[0]);// store arr[0] in the array.
-		// look at the rest of the array.
-		int element,next;
-		for (int i=1;i<len;i++)
-		{
-			next= arr[i];
-			element =nums.pop(); // get top from stack
-			while (element< next)
-			{
-				System.out.println("Pair " + element+ " "+next);
-				//check if the stack is empty. if yes: break else set elem for next iteration
-				if (nums.isEmpty())
-					break;
-				element=nums.pop();
-			}
-			if (element> next)
-			{
-				nums.push(element);//push back element if it is less than the next!
-			}
-			nums.push(next); //push next on to stack for future inspection.
-		}
-		// If stack is still not empty-- then these elements dont have a next greater value!
-		while(!nums.isEmpty())
-		{
-			int num = nums.pop();
-			System.out.println("Pair " + num + " " + num);
-		}
-	} 
-	
 	public static void main(String args[]){
-		
-//		ListNode l1 = new ListNode(1);
-//		ListNode l2 = new ListNode(2);
-//		ListNode l3 = new ListNode(3);
-//		ListNode l4 = new ListNode(4);
-//		ListNode l5 = new ListNode(5);
-//		
-//		l1.next = l2;
-//		l2.next = l3;
-//		l3.next = l4;
-//		l4.next = l5;
-//		
-//		ListNode head = rotateRight(l1, 0);
-//		while (head != null){
-//			System.out.print(head.val + " ");
-//			head = head.next;
-//		}
-		
-		int[] array = {10, 4, 3, 5, 7, 9};
-		int[] result = getNGE(array);
-		
-		for (int i = 0; i < result.length; i++){
-			System.out.print(result[i] + " ");;
-		}
+		int[] nums = {1, 2, 1, 2};
+		System.out.println(workTime(nums, 2));
 		
 		/**
 		 * Compare version

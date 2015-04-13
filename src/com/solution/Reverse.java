@@ -10,6 +10,7 @@ public class Reverse {
 	
 	public static ListNode reverseLinkedList(ListNode head){
 		
+
 		ListNode dummy = new ListNode(-1);
 		
 		while (head != null){
