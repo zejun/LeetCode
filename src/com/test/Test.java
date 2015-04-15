@@ -26,7 +26,6 @@ public class Test {
 			return nums.length;
 		}
 		
-		int len = nums.length;
 		int count = 0;
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		
